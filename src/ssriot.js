@@ -58,6 +58,7 @@ module.exports = class Ssriot {
     var spat = {};
     spat.config = ${JSON.stringify(spat.config)};
     spat.plugins = ${JSON.stringify(spat.plugins)};
+    spat.preloadData = ${JSON.stringify(this.tag.navTag.preloadData)};
     </script>
     <script src="/spat/modules.js" async></script>
 `;

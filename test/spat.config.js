@@ -3,7 +3,7 @@ var config = {
     minify: true,
   },
   server: {
-    // cache: true,
+    cache: true,
     // ssr: false,
   },
   client: {

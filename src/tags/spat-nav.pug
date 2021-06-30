@@ -13,6 +13,8 @@ spat-nav
 
   script.
     this.cachedPageTags = {};
+    this.preloadIndex = 0;
+    this.preloadData = [];
 
     this.goto = async ({route, req, res, ssr=true, isPageChanging=false}) => {
       var tagName = '';
@@ -138,7 +140,14 @@ spat-nav
     // preload を再帰呼び出し
     this.preload = async (tag, opts) => {
       if (tag.preload) {
-        var data = await tag.preload(opts);
+        var data = {};
+        if (spat.isBrowser && spat.preloadData[this.preloadIndex]) {
+          data = spat.preloadData[this.preloadIndex++];
+        }
+        else {
+          data = await tag.preload(opts);
+          this.preloadData[this.preloadIndex++] = data;
+        }
         Object.assign(tag, data);
         tag.update();
       }

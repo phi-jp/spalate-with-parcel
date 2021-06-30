@@ -18,9 +18,8 @@ page-index
     this.title = 'Hello, spat with parcel!';
 
     this.preload = async ({req, res, cached}) => {
-      if (cached) return ;
+      //- await app.utils.wait(1000);
 
-      console.log('index: preload');
       var ref = db.collection('groups');
       var ss = await ref.get({source: "cache"});
       
@@ -33,7 +32,7 @@ page-index
           id: doc.id,
           ref: doc.ref,
           data: doc.data(),
-        }
+        };
       });
 
       items = [...items, ...items, ...items];

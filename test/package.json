@@ -7,9 +7,7 @@
     "start": "spat start",
     "dev": "spat dev",
     "clean": "spat clean",
-
     "dev:prod": "NODE_ENV=production spat dev",
-
     "icon": "fontcustom compile ./static/images/icons --font_name icons --output static/icons/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,7 +15,7 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "firebase": "^7.13.2",
+    "firebase": "^8.4.3",
     "jquery": "^3.5.0",
     "parcel-plugin-riot-pug": "git://github.com/phi-jp/parcel-plugin-riot-pug.git#037609bc2fbb17ec3c6097f879c6d29fd5e1c256"
   },
